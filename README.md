@@ -8,6 +8,8 @@ OJS child theme for extending OJS's default theme with views of the geospatial m
 
 Based on <https://github.com/NateWr/defaultChild>.
 
+**Issues are managed on the mein repository at TIBHannover/optimetaGeo.**
+
 # License
 
 This project is published under GNU General Public License, Version 3.

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/themes/optimetaGeoTHeme/version.xml
+  *
+  * Copyright (c) 2022 OPTIMETA
+  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+  *
+  * Plugin version information.
+  -->
+
+<version>
+	<application>optimetaGeoTheme</application>
+	<type>plugins.themes</type>
+	<release>0.1.0.0</release>
+	<date>2022-05-19</date>
+	<lazy-load>1</lazy-load>
+	<class>OptimetaGeoChildThemePlugin</class>
+</version>
