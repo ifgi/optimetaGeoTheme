@@ -3,9 +3,11 @@
  *
  * Copyright (c) 2014-2021 Simon Fraser University
  * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ * Copyright (c) 2022 OPTIMETA project
+ * Copyright (c) 2022 Daniel Nüst
+ * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
  *
- * @brief View of an Issue which displays a full table of contents.
+ * @brief View of an Issue which displays a full table of contents, with an added hook at the end.
  *
  * @uses $issue Issue The issue
  * @uses $issueTitle string Title of the issue. May be empty
