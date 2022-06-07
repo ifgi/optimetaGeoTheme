@@ -16,3 +16,27 @@ msgstr "OPTIMETA Geo Theme"
 
 msgid "plugins.themes.optimetaGeoTheme.description"
 msgstr "This theme is a child theme of the default theme to add views of geospatial metadata to OJS."
+
+msgid "plugins.themes.optimetaGeoTheme.parent.label"
+msgstr "Parent theme name"
+
+msgid "plugins.themes.optimetaGeoTheme.parent.description"
+msgstr "Configure the name of the parent theme - this is the lowercase class name of the theme, e.g., 'bootstrapthreethemeplugin'."
+
+msgid "plugins.themes.optimetaGeoTheme.mapPageMenuOff"
+msgstr "Add map page to main navigation menu."
+
+msgid "plugins.themes.optimetaGeoTheme.mapPageMenuOn"
+msgstr "Do not add map page to main navigation menu."
+
+msgid "plugins.themes.optimetaGeoTheme.mapPage.label"
+msgstr "Add map page"
+
+msgid "plugins.themes.optimetaGeoTheme.mapPage.description"
+msgstr "Add a page to the top navigation menu to show a map with all articles of a journal."
+
+msgid "plugins.themes.optimetaGeoTheme.mapPage.option"
+msgstr "Add map to primary menu"
+
+msgid "plugins.generic.optimetaGeoTheme.mapMenu"
+msgstr "Map"

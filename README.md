@@ -10,6 +10,19 @@ Based on <https://github.com/NateWr/defaultChild>.
 
 **Issues are managed on the mein repository at TIBHannover/optimetaGeo.**
 
-# License
+## Making your theme compatible
+
+This theme is a child theme overriding seleted components of the OJS frontend that need to be extended for the OPTIMETE Geoplugin.
+If your plugin overrides the same components, then the geoplugin might not behave correctly.
+Therefore, please open an issue with the label `theme` by [clicking this link](https://github.com/TIBHannover/optimetaGeo/issues/new?labels=theme) if you want to add support for your template - we will help you!
+
+### Currently supported themes
+
+- Default Theme Plugin, `defaultthemeplugin`
+- [Material Theme Plugin](https://github.com/madi-nuralin/material), `materialthemeplugin`
+- [Pragma Theme Plugin](https://github.com/pkp/pragma), `pragmathemeplugin`
+
+## License
 
 This project is published under GNU General Public License, Version 3.
+Please check licenses of snippets from used themes.

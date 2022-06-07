@@ -19,6 +19,10 @@
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  * @uses $heading string HTML heading element, default: h2
  *}
+
+
+{if $activeTheme->getOption('parentName') == 'defaultthemeplugin'}
+
 {if !$heading}
 	{assign var="heading" value="h2"}
 {/if}
@@ -30,6 +34,7 @@
 {elseif $heading == "h5"}
 	{assign var="articleHeading" value="h6"}
 {/if}
+
 <div class="obj_issue_toc">
 
 	{* Indicate if this is only a preview *}
@@ -133,3 +138,87 @@
 	{call_hook name="Templates::Issue::TOC::Main"}
 	</div><!-- .sections -->
 </div>
+
+{/if} {* defaultthemeplugin *}
+
+{* https://github.com/pkp/pragma/blob/main/templates/frontend/objects/issue_toc.tpl *}
+{if $activeTheme->getOption('parentName') == 'pragmathemeplugin'}
+
+<div class="row">
+	<header class="col-sm-8 issue">
+		{if $requestedOp === "index"}
+			<p class="metadata">{translate key="journal.currentIssue"}</p>
+		{/if}
+		{strip}
+		{capture name="issueMetadata"}
+			{if $issue->getShowVolume() || $issue->getShowNumber()}
+				{if $issue->getShowVolume()}
+					<span class="issue__volume">{translate key="issue.volume"} {$issue->getVolume()|escape}{if $issue->getShowNumber()}, {/if}</span>
+				{/if}
+				{if $issue->getShowNumber()}
+					<span class="issue__number">{translate key="issue.no"} {$issue->getNumber()|escape}. </span>
+				{/if}
+			{/if}
+			{if $issue->getShowTitle()}
+				<br/><span class="issue__title">{$issue->getLocalizedTitle()|escape}</span>
+			{/if}
+		{/capture}
+
+		{if $requestedPage === "issue" && $smarty.capture.issueMetadata|trim !== ""}
+			<h1 class="issue__header">
+				{$smarty.capture.issueMetadata}
+			</h1>
+		{elseif $smarty.capture.issueMetadata|trim !== ""}
+			<h2 class="issue__title">
+				{$smarty.capture.issueMetadata}
+			</h2>
+		{/if}
+
+		{if $issue->getDatePublished()}
+			<p class="metadata">{translate key="submissions.published"} {$issue->getDatePublished()|date_format:$dateFormatLong}</p>
+		{/if}
+		{if $issue->getLocalizedDescription()}
+			<div class="issue-desc">
+				{assign var=stringLenght value=280}
+				{assign var=issueDescription value=$issue->getLocalizedDescription()|strip_unsafe_html}
+				{if $issueDescription|strlen <= $stringLenght || $requestedPage == 'issue'}
+					{$issueDescription}
+				{else}
+					{$issueDescription|substr:0:$stringLenght|mb_convert_encoding:'UTF-8'|replace:'?':''|trim}…
+					<p>
+						<a class="btn btn-secondary"
+						   href="{url op="view" page="issue" path=$issue->getBestIssueId()}">{translate key="issue.fullIssue"}</a>
+					</p>
+				{/if}
+			</div>
+		{/if}
+		{/strip}
+	</header>
+</div>
+
+{assign var=contentTableInserted value=false}
+{foreach name=sections from=$publishedSubmissions item=section key=sectionNumber}
+	{if $section.articles}
+		<hr/>
+		<section class="issue-section">
+			{if !$contentTableInserted}
+				<h3 class="issue-section__toc-title">Table of contents</h3>
+				{assign var=contentTableInserted value=true}
+			{/if}
+			<header class="issue-section__header">
+				<h3 class="issue-section__title">{$section.title|escape}</h3>
+			</header>
+			<ol class="issue-section__toc">
+				{foreach from=$section.articles item=article}
+					<li class="issue-section__toc-item">
+						{include file="frontend/objects/article_summary.tpl"}
+					</li>
+				{/foreach}
+			</ol>
+		</section>
+	{/if}
+
+	{call_hook name="Templates::Issue::TOC::Main"}
+{/foreach}
+
+{/if} {* pragmathemeplugin *}
