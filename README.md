@@ -2,7 +2,7 @@
 
 # OPTIMETA Geo Plugin Theme
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8199045.svg)](https://doi.org/10.5281/zenodo.8199045)
 
 OJS child theme for extending OJS's default theme with views of the geospatial metadata for the OPTIMETA Geo Plugin, <https://github.com/TIBHannover/optimetaGeo>.
 
